@@ -1,6 +1,6 @@
 {
   "name": "backbone-class-syntax",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Helps moving well-known properties from classes inherited from Backbone and Marionette classes to object prototypes.",
   "author": "Ferdinand Prantl <prantlf@gmail.com>",
   "license": "MIT",
