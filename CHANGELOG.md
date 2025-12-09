@@ -1,5 +1,11 @@
 # Changes
 
+## [1.2.0](https://github.com/prantlf/backbone-class-syntax/compare/v1.1.0...v1.2.0) (2025-12-09)
+
+### Features
+
+* Look for Backbone import only in import/export section ([01692f4](https://github.com/prantlf/backbone-class-syntax/commit/01692f43b11bcea250928822253e4a9f3123a483))
+
 ## [1.1.0](https://github.com/prantlf/backbone-class-syntax/compare/v1.0.0...v1.1.0) (2025-12-09)
 
 ### Features
