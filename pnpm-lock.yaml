@@ -21,8 +21,8 @@ importers:
         specifier: ^7.0.0
         version: 7.0.0
       properties-to-prototype:
-        specifier: ^2.0.0
-        version: 2.0.0
+        specifier: ^2.2.0
+        version: 2.2.0
       rollup:
         specifier: ^4.53.3
         version: 4.53.3
@@ -402,8 +402,8 @@ packages:
     resolution: {integrity: sha512-Xa4Nw17FS9ApQFJ9umLiJS4orGjm7ZzwUrwamcGQuHSzDyth9boKDaycYdDcZDuqYATXw4HFXgaqWTctW/v1HA==}
     engines: {node: '>=16 || 14 >=14.18'}
 
-  properties-to-prototype@2.0.0:
-    resolution: {integrity: sha512-tK5thsQ1mVusVq2SRCZIFXMANGwXeN3oTVemgcc4rwoOxMIpKGCNzYOa8GwJts4QbLfDJKOH+H2XHYm07EWm+w==}
+  properties-to-prototype@2.2.0:
+    resolution: {integrity: sha512-Xo/LouU8gbI4Zw4iD2JkLpCqoHmjD80AxGC9CqQ3h70/Cpm8Gi8Y6mZJJ5Bwx5rer91C6jZnlJKt0gKmzjy7QA==}
     engines: {node: '>=20'}
 
   require-directory@2.1.1:
@@ -791,7 +791,7 @@ snapshots:
       lru-cache: 10.4.3
       minipass: 7.1.2
 
-  properties-to-prototype@2.0.0: {}
+  properties-to-prototype@2.2.0: {}
 
   require-directory@2.1.1: {}
 

@@ -3,7 +3,10 @@ import tehanu from 'tehanu'
 import { parse } from 'meriyah'
 import { generate } from 'astring'
 import { updateClassDeclarations } from 'properties-to-prototype'
-import { backbonePrototypeProperties, classifyBackboneClass } from '../lib/index.js'
+import {
+  backboneClassTypes, backboneClassTypesBySuffixes,
+  backbonePrototypeProperties, classifyBackboneClass
+} from '../lib/index.js'
 
 const test = tehanu(import.meta.filename)
 
@@ -24,6 +27,53 @@ class Test {
   const expected = `
 class Test {}
 Object.assign(Test.prototype, {
+  defaults: {}
+});
+`
+  strictEqual(actual.trim(), expected.trim())
+})
+
+test('moves property by class name and regexp', () => {
+  const input = `
+class TestModel {
+  defaults = {}
+}
+`
+  const program = parse(input, { next: true })
+  const { updated } = updateClassDeclarations(program, {
+    classTypes: backboneClassTypes,
+    prototypeProperties: backbonePrototypeProperties,
+    ensureConstructorName: false
+  })
+  ok(updated)
+  const actual = generate(program)
+  const expected = `
+class TestModel {}
+Object.assign(TestModel.prototype, {
+  defaults: {}
+});
+`
+  strictEqual(actual.trim(), expected.trim())
+})
+
+test('moves property by class name and string suffix', () => {
+  const input = `
+class TestModel {
+  defaults = {}
+}
+`
+  const program = parse(input, { next: true })
+  const { updated } = updateClassDeclarations(program, {
+    classTypes: backboneClassTypesBySuffixes,
+    classTypesByEnds: true,
+    prototypeProperties: backbonePrototypeProperties,
+    ensureConstructorName: false
+  })
+  ok(updated)
+  const actual = generate(program)
+  const expected = `
+class TestModel {}
+Object.assign(TestModel.prototype, {
   defaults: {}
 });
 `

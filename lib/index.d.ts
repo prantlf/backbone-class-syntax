@@ -1,3 +1,7 @@
+export const backboneClassTypes: Record<string, (string | RegExp)[]>
+
+export const backboneClassTypesBySuffixes: Record<string, (string | RegExp)[]>
+
 export const backbonePrototypeProperties: Record<string, string[]>
 
 export function classifyBackboneClass(

@@ -53,12 +53,12 @@ import { readFile } from 'node:fs/promises'
 import { parse } from 'meriyah'
 import { generate } from 'astring'
 import { updateClassDeclarations } from 'properties-to-prototype'
-import { backbonePrototypeProperties, classifyBackboneClas } from 'backbone-class-syntax'
+import { backbonePrototypeProperties, classifyBackboneClass } from 'backbone-class-syntax'
 
 const input = await readFile('index.js', 'utf8')
 const program = parse(input, { sourceType: 'module', next: true })
 const { updated } = updateClassDeclarations(program, {
-  prototypeProperties: backbonePrototypeProperties
+  prototypeProperties: backbonePrototypeProperties,
   classifyClass: classifyBackboneClass
 })
 if (updated) {
@@ -105,6 +105,62 @@ Default value of `backboneClassTypes`:
   Behavior: 'behavior',
   Controller: 'controller',
   Application:'application'
+}
+```
+
+### backboneClassTypes
+
+```js
+{
+  model: [
+    /Model$/
+  ],
+  collection: [
+    /Collection$/
+  ],
+  view: [
+    /View$/
+  ],
+  behavior: [
+    /Behavior$/
+  ],
+  router: [
+    /Router$/
+  ],
+  controller: [
+    /Controller$/, /Object$/
+  ],
+  application: [
+    /Application$/
+  ]
+}
+```
+
+### backboneClassTypesBySuffixes
+
+```js
+{
+  model: [
+    'Model'
+  ],
+  collection: [
+    'Collection'
+  ],
+  view: [
+    'View'
+  ],
+  behavior: [
+    'Behavior'
+  ],
+  router: [
+    'Router'
+  ],
+  controller: [
+    'Controller', 'Object'
+  ],
+  application: [
+    'Application'
+  ]
 }
 ```
 
