@@ -1,5 +1,11 @@
 # Changes
 
+## [1.3.0](https://github.com/prantlf/backbone-class-syntax/compare/v1.2.0...v1.3.0) (2026-05-04)
+
+### Features
+
+* Upgrade dependencies ([4bded48](https://github.com/prantlf/backbone-class-syntax/commit/4bded48f686551888e67aab8e209245504a53278))
+
 ## [1.2.0](https://github.com/prantlf/backbone-class-syntax/compare/v1.1.0...v1.2.0) (2025-12-09)
 
 ### Features
